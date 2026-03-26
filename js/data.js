@@ -13,7 +13,7 @@ const BACKGROUND_CONFIG = {
     // Methanata oya kamathi Animation Video ekaka YouTube embed URL eka hari mp4 link eka hari danna.
     // YouTube link daddi URL eke ? walin passe thiyena tika ain karala danna.
     // Udaharana: "https://www.youtube.com/embed/jfKfPfyJRdk"
-    url: "https://youtu.be/cu959m5z07Q"
+    url: "https://www.youtube.com/embed/o4qjk8_5gmU",
 };
 
 const CLASS_VIDEOS = [
