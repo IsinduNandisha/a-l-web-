@@ -140,5 +140,5 @@ filterBtns.forEach(btn => {
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
-    renderVideos('all');
+    renderVideos('geography');
 });
