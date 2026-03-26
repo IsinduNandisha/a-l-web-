@@ -15,6 +15,7 @@ const showLoginBtn = document.getElementById('showLogin');
 const authSubtitle = document.getElementById('authSubtitle');
 const welcomeText = document.getElementById('welcomeText');
 const btnLogout = document.getElementById('btnLogout');
+const dynamicBgContainer = document.getElementById('dynamicBgContainer');
 
 // Register Elements
 const btnSendOtp = document.getElementById('btnSendOtp');
@@ -31,6 +32,8 @@ const loginPassInput = document.getElementById('loginPassword');
 
 // Initialization
 function initAuth() {
+    loadBackground();
+    
     // Check if user is already logged in
     const storedUser = localStorage.getItem('al_vault_user');
     if (storedUser) {
@@ -38,6 +41,26 @@ function initAuth() {
         showApp();
     } else {
         showAuth();
+    }
+}
+
+// Dynamic Background Loader
+function loadBackground() {
+    if (typeof BACKGROUND_CONFIG === 'undefined' || !dynamicBgContainer) return;
+    
+    let mediaHtml = '';
+    
+    if (BACKGROUND_CONFIG.type === 'youtube') {
+        const separator = BACKGROUND_CONFIG.url.includes('?') ? '&' : '?';
+        mediaHtml = `<iframe src="${BACKGROUND_CONFIG.url}${separator}autoplay=1&mute=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    } else if (BACKGROUND_CONFIG.type === 'video') {
+        mediaHtml = `<video src="${BACKGROUND_CONFIG.url}" autoplay loop muted playsinline class="auth-bg-media"></video>`;
+    } else if (BACKGROUND_CONFIG.type === 'image') {
+        mediaHtml = `<img src="${BACKGROUND_CONFIG.url}" alt="Study Background" class="auth-bg-media">`;
+    }
+    
+    if (mediaHtml) {
+        dynamicBgContainer.innerHTML = mediaHtml + `<div class="auth-bg-overlay"></div>`;
     }
 }
 

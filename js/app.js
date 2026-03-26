@@ -28,7 +28,7 @@ const modalBadge = document.getElementById('modalBadge');
 // Initial Render
 function renderVideos(filterSubject = 'all') {
     videoGrid.innerHTML = '';
-    
+
     // Reverse array to show newest first
     const displayVideos = [...videos].reverse().filter(video => {
         if (filterSubject === 'all') return true;
@@ -51,7 +51,7 @@ function renderVideos(filterSubject = 'all') {
     displayVideos.forEach((video, index) => {
         const videoId = getYouTubeId(video.url);
         const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
-        
+
         const subInfo = subjectMap[video.subject] || { name: video.subject, class: 'badge-geography' };
 
         const card = document.createElement('div');
@@ -73,7 +73,7 @@ function renderVideos(filterSubject = 'all') {
                 </div>
             </div>
         `;
-        
+
         card.addEventListener('click', () => openModal(video, videoId, subInfo));
         videoGrid.appendChild(card);
     });
@@ -85,16 +85,16 @@ function openModal(video, videoId, subInfo) {
         alert("Invalid YouTube Link. Please check data.js");
         return;
     }
-    
+
     // Set Video
     iframeContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-    
+
     // Set Info
     modalTitle.textContent = video.title;
     modalDate.innerHTML = `<i class="ph ph-calendar-blank"></i> ${video.date}`;
     modalBadge.textContent = subInfo.name;
     modalBadge.className = `subject-badge ${subInfo.class}`;
-    
+
     // Show Modal
     modal.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling

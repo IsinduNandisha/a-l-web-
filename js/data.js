@@ -5,6 +5,17 @@
 // url: Any youtube link format (unlisted links also work)
 //========================================================================================
 
+// Background Configuration (Developer Only)
+const BACKGROUND_CONFIG = {
+    // Type can be "image", "video" (e.g. mp4 filename), or "youtube"
+    type: "youtube",
+
+    // Methanata oya kamathi Animation Video ekaka YouTube embed URL eka hari mp4 link eka hari danna.
+    // YouTube link daddi URL eke ? walin passe thiyena tika ain karala danna.
+    // Udaharana: "https://www.youtube.com/embed/jfKfPfyJRdk"
+    url: "https://youtu.be/cu959m5z07Q"
+};
+
 const CLASS_VIDEOS = [
     {
         id: "geo-001",
