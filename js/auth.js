@@ -52,7 +52,7 @@ function showApp() {
     authOverlay.classList.remove('active');
     mainApp.style.display = 'block';
     document.body.style.overflow = '';
-    
+
     // Update Welcome Text
     welcomeText.textContent = `Welcome, ${currentUser.phone}!`;
 }
@@ -63,14 +63,14 @@ function toggleMode(toLogin) {
         loginForm.classList.add('active');
         registerForm.classList.remove('active');
         authSubtitle.textContent = 'Login to access your classes';
-        
+
         // Reset Register Form
         resetRegisterForm();
     } else {
         loginForm.classList.remove('active');
         registerForm.classList.add('active');
         authSubtitle.textContent = 'Create an account to start learning';
-        
+
         // Reset Login Form
         loginForm.reset();
     }
@@ -102,7 +102,7 @@ function isValidPhone(phone) {
 btnSendOtp.addEventListener('click', (e) => {
     e.preventDefault();
     const phone = regPhoneInput.value.trim();
-    
+
     if (!isValidPhone(phone)) {
         alert("Please enter a valid 10-digit phone number (e.g., 0712345678).");
         return;
@@ -119,7 +119,7 @@ btnSendOtp.addEventListener('click', (e) => {
 
     // Simulate OTP sent
     alert(`OTP sent successfully! For this demo, please use OTP: ${MOCK_OTP}`);
-    
+
     // Show OTP and Password fields
     regPhoneInput.disabled = true;
     otpSection.style.display = 'block';
@@ -166,7 +166,7 @@ loginForm.addEventListener('submit', (e) => {
     const password = loginPassInput.value.trim();
 
     const users = JSON.parse(localStorage.getItem('al_vault_users') || '{}');
-    
+
     if (!users[phone]) {
         alert("Account not found. Please register first.");
         return;
@@ -180,10 +180,10 @@ loginForm.addEventListener('submit', (e) => {
     // Login successful
     currentUser = { phone: phone };
     localStorage.setItem('al_vault_user', JSON.stringify(currentUser));
-    
+
     // Clear form
     loginForm.reset();
-    
+
     showApp();
 });
 

@@ -142,3 +142,30 @@ filterBtns.forEach(btn => {
 document.addEventListener('DOMContentLoaded', () => {
     renderVideos('geography');
 });
+
+// --- Theme Toggle Logic ---
+const themeToggleBtn = document.getElementById('themeToggle');
+const htmlEl = document.documentElement;
+
+function applyTheme(isDark) {
+    if (isDark) {
+        htmlEl.setAttribute('data-theme', 'dark');
+        themeToggleBtn.innerHTML = '<i class="ph ph-sun"></i>';
+    } else {
+        htmlEl.removeAttribute('data-theme');
+        themeToggleBtn.innerHTML = '<i class="ph ph-moon"></i>';
+    }
+}
+
+// Check saved theme or system preference
+const savedTheme = localStorage.getItem('al_vault_theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isDarkInitially = savedTheme === 'dark' || (!savedTheme && prefersDark);
+applyTheme(isDarkInitially);
+
+themeToggleBtn.addEventListener('click', () => {
+    const isCurrentlyDark = htmlEl.getAttribute('data-theme') === 'dark';
+    const newDarkState = !isCurrentlyDark;
+    applyTheme(newDarkState);
+    localStorage.setItem('al_vault_theme', newDarkState ? 'dark' : 'light');
+});
