@@ -33,7 +33,7 @@ const loginPassInput = document.getElementById('loginPassword');
 // Initialization
 function initAuth() {
     loadBackground();
-    
+
     // Check if user is already logged in
     const storedUser = localStorage.getItem('al_vault_user');
     if (storedUser) {
@@ -47,9 +47,9 @@ function initAuth() {
 // Dynamic Background Loader
 function loadBackground() {
     if (typeof BACKGROUND_CONFIG === 'undefined' || !dynamicBgContainer) return;
-    
+
     let mediaHtml = '';
-    
+
     if (BACKGROUND_CONFIG.type === 'youtube') {
         const separator = BACKGROUND_CONFIG.url.includes('?') ? '&' : '?';
         mediaHtml = `<iframe src="${BACKGROUND_CONFIG.url}${separator}autoplay=1&mute=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
@@ -58,7 +58,7 @@ function loadBackground() {
     } else if (BACKGROUND_CONFIG.type === 'image') {
         mediaHtml = `<img src="${BACKGROUND_CONFIG.url}" alt="Study Background" class="auth-bg-media">`;
     }
-    
+
     if (mediaHtml) {
         dynamicBgContainer.innerHTML = mediaHtml + `<div class="auth-bg-overlay"></div>`;
     }
