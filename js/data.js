@@ -13,23 +13,23 @@ const BACKGROUND_CONFIG = {
     // Methanata oya kamathi Animation Video ekaka YouTube embed URL eka hari mp4 link eka hari danna.
     // YouTube link daddi URL eke ? walin passe thiyena tika ain karala danna.
     // Udaharana: "https://www.youtube.com/embed/jfKfPfyJRdk"
-    url: "https://youtu.be/gZknpSi4CP8",
+    url: "https://www.youtube.com/embed/gZknpSi4CP8",
 };
 
 const CLASS_VIDEOS = [
     {
         id: "geo-001",
         subject: "geography",
-        title: "භූගෝල විද්‍යාව - පළමු පාඩම (Geography - Lesson 1)",
-        date: "-",
-        url: "non-03-20e" // Use your unlisted link here
+        title: "භූගෝල විද්‍යාව - part 1",
+        date: "2026-03-05",
+        url: "https://www.youtube.com/live/6UZib-rjRao?si=OuuQawPFeA6ZojuK" // Use your unlisted link here
     },
     {
         id: "geo-002",
         subject: "geography",
-        title: "භූගෝල විද්‍යාව - දෙවන පාඩම (Geography - Lesson 2)",
-        date: "-",
-        url: "none"
+        title: "භූගෝල විද්‍යාව - part 2",
+        date: "2026-03-12",
+        url: "https://www.youtube.com/live/q9rsNoKLkIM?si=LevVRrRMBSi_5Uu7"
     },
     {
         id: "media-001",
@@ -45,5 +45,12 @@ const CLASS_VIDEOS = [
         title: "සිංහල - සාහිත්‍යය (Sinhala - Literature)",
         date: "-",
         url: "none"
-    }
+    },
+    {
+        id: "geo-002",
+        subject: "geography",
+        title: "භූගෝල විද්‍යාව - part 2",
+        date: "2026-03-19",
+        url: "https://www.youtube.com/live/gH1Pev1R_7M?si=i9AAGLUYVuWFcPYR"
+    },
 ];
