@@ -22,14 +22,14 @@ const CLASS_VIDEOS = [
         subject: "geography",
         title: "භූගෝල විද්‍යාව - part 1",
         date: "2026-03-05",
-        url: "https://www.youtube.com/live/6UZib-rjRao?si=OuuQawPFeA6ZojuK" // Use your unlisted link here
+        url: "https://www.youtube.com/live/6UZib-rjRao" // Use your unlisted link here
     },
     {
         id: "geo-002",
         subject: "geography",
         title: "භූගෝල විද්‍යාව - part 2",
         date: "2026-03-12",
-        url: "https://www.youtube.com/live/q9rsNoKLkIM?si=LevVRrRMBSi_5Uu7"
+        url: "https://www.youtube.com/live/q9rsNoKLkIM"
     },
     {
         id: "media-001",
@@ -49,8 +49,8 @@ const CLASS_VIDEOS = [
     {
         id: "geo-002",
         subject: "geography",
-        title: "භූගෝල විද්‍යාව - part 2",
+        title: "භූගෝල විද්‍යාව - part 3",
         date: "2026-03-19",
-        url: "https://www.youtube.com/live/gH1Pev1R_7M?si=i9AAGLUYVuWFcPYR"
+        url: "https://www.youtube.com/live/gH1Pev1R_7M"
     },
 ];
